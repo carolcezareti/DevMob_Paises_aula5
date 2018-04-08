@@ -7,4 +7,7 @@
     <item name="lista_paises" type="id">Listar Paises</item>
     <item name="regiao_paises" type="id">Região</item>
     <item name="capital_paises" type="id">Capital</item>
+    <item name="id_paises" type="id">Id Paises</item>
+    <item name="nome_paises" type="id">Nome</item>
+    <item name="bandeira_paises" type="id">Bandeira</item>
 </resources>

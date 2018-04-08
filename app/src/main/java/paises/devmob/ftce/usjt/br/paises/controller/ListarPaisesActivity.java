@@ -10,7 +10,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import paises.devmob.ftce.usjt.br.paises.R;
-import paises.devmob.ftce.usjt.br.paises.model.Data;
 import paises.devmob.ftce.usjt.br.paises.model.Paises;
 import paises.devmob.ftce.usjt.br.paises.model.PaisesAdapter;
 
@@ -30,8 +29,7 @@ public class ListarPaisesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_paises);
         Intent intent = getIntent();
-        String nomeFila = intent.getStringExtra(MainActivity.FILA);
-        paises = Data.buscarPaises(nomeFila);
+        paises = (ArrayList<Paises>)intent.getSerializableExtra(MainActivity.PAIS);
         listView = (ListView) findViewById(R.id.lista_paises);
         PaisesAdapter adapter = new PaisesAdapter(this, paises);
         listView.setAdapter(adapter);

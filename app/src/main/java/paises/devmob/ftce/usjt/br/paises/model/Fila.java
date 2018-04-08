@@ -6,17 +6,14 @@ package paises.devmob.ftce.usjt.br.paises.model;
 
 public class Fila {
     private int id;
-    private String nome, bandeira, regiao, capital;
+    private String nome, figura;
 
     public Fila(int id, String nome, String figura) {
         this.id = id;
         this.nome = nome;
-        this.bandeira = bandeira;
-        this.regiao = regiao;
-        this.capital = capital;
+        this.figura = figura;
+
     }
-
-
 
     public Fila() {
     }
@@ -37,32 +34,20 @@ public class Fila {
         this.nome = nome;
     }
 
-    public String getBandeira() {
-        return bandeira;
+    public String getFigura() {
+        return figura;
     }
 
-    public void setBandeira(String figura) {
-        this.bandeira = figura;
+    public void setFigura(String figura) {
+        this.figura = figura;
     }
-
-    public String getRegiao() {
-        return regiao;
-    }
-
-    public void setRegiao(String regiao) {this.regiao = regiao; }
-
-    public String getCapital() { return capital; }
-
-    public void setCapital(String capital) { this.capital = capital; }
 
     @Override
     public String toString() {
         return "Fila{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", bandeira='" + bandeira + '\'' +
-                "regiao='" + regiao + '\'' +
-                "capital" +capital + '\'' +
+                ", figura='" + figura + '\'' +
                 '}';
     }
 }

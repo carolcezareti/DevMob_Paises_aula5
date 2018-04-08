@@ -17,21 +17,24 @@ import paises.devmob.ftce.usjt.br.paises.model.Util;
 
 public abstract class DetalhePaisesActivity extends Context {
     private int contentView;
+    Intent intent;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_paises);
         Intent intent = getIntent();
-        Paises paises = (Paises)intent.getSerializableExtra(ListarPaisesActivity.PAIS);
-        ImageView bandeira = (ImageView) bandeira.findViewById();
-        Drawable drawable = Util.getDrawableDinamic(this, paises.getFila().getBandeira());
-        bandeira.setImageDrawable(drawable);
+        Paises paises = (Paises) intent.getSerializableExtra(ListarPaisesActivity.PAIS);
+        ImageView foto = (ImageView) foto.findViewById();
+        Drawable drawable = Util.getDrawableDinamic(this, paises.getFila().getFigura());
+        foto.setImageDrawable(drawable);
         TextView fila = (TextView) fila.findViewById();
         fila.setText(paises.getFila().getNome());
-        TextView numero = (TextView) numero.findViewById();
-        numero.setText(""+paises.getNumero());
-        TextView descricao = (TextView) descricao.findViewById();
-        descricao.setText(""+paises.getDescricao());
+        TextView id = (TextView) id.findViewById();
+        id.setText(""+paises.getId());
+        TextView nome = (TextView) nome.findViewById();
+        nome.setText(""+paises.getNome());
+        TextView bandeira = (TextView) bandeira.findViewById();
+        bandeira.setText(String.format("%tD",paises.getBandeira()));
         TextView regiao = (TextView) regiao.findViewById();
         regiao.setText(""+paises.getRegiao());
         TextView capital = (TextView) capital.findViewById();
@@ -39,7 +42,6 @@ public abstract class DetalhePaisesActivity extends Context {
     }
 
     public Intent getIntent() {
-        Intent intent = null;
         return intent;
     }
 

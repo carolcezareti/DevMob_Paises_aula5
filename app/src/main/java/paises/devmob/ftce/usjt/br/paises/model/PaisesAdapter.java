@@ -47,19 +47,21 @@ public class PaisesAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
 
-        if(view == null) {
+        if (view == null) {
             LayoutInflater inflater = (LayoutInflater)
                     context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.linha_paises, parent, false);
 
             ImageView imagem = (ImageView) view.findViewById(R.id.imagem_fila);
-            TextView numero = (TextView) view.findViewById(R.id.numero_paises);
-            TextView descricao = (TextView) view.findViewById(R.id.descricao_paises);
+            TextView id = (TextView) view.findViewById(R.id.id_paises);
+            TextView nome = (TextView) view.findViewById(R.id.nome_paises);
+            TextView bandeira = (TextView) view.findViewById(R.id.bandeira_paises);
             TextView regiao = (TextView) view.findViewById(R.id.regiao_paises);
             TextView capital = (TextView) view.findViewById(R.id.capital_paises);
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.setNumero(numero);
-            viewHolder.setDescricao(descricao);
+            viewHolder.setId(id);
+            viewHolder.setNome(nome);
+            viewHolder.setBandeira(bandeira);
             viewHolder.setRegiao(regiao);
             viewHolder.setCapital(capital);
             viewHolder.setImagem(imagem);
@@ -68,12 +70,13 @@ public class PaisesAdapter extends BaseAdapter {
 
         Paises paises = paises.get(position);
 
-        ViewHolder viewHolder = (ViewHolder)view.getTag();
+        ViewHolder viewHolder = (ViewHolder) view.getTag();
 
-        viewHolder.getImagem().setImageDrawable(Util.getDrawableDinamic(context, paises.getFila().getBandeira()));
+        viewHolder.getImagem().setImageDrawable(Util.getDrawableDinamic(context, paises.getFila().getFigura()));
 
-        viewHolder.getNumero().setText(String.format("numero: %d", viewHolder.getNumero(),));
-        viewHolder.getDescricao().setText(paises.getDescricao());
+        viewHolder.getId().setText(String.format("id: %d", viewHolder.getId()));
+        viewHolder.getNome().setText(paises.getNome());
 
         return view;
     }
+}
